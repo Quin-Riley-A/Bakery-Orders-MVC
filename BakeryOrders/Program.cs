@@ -13,6 +13,8 @@ namespace BakeryOrder
 
       WebApplication app = builder.Build();
 
+      app.UseHttpsRedirection();
+
       app.UseRouting();
 
       app.MapControllerRoute(

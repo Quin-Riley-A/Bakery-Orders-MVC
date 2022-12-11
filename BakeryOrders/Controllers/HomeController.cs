@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Bakery.Models;
 
 namespace BakeryOrder.Controllers
 {
@@ -6,9 +7,15 @@ namespace BakeryOrder.Controllers
   {
 
     [Route("/")]
-    public string Root() {}
+    public ActionResult Index() 
+    {
+      return View();
+    }
 
-    [Route("/Vendor")]
-    public string Vendor() {}
+    [Route("/Vendors")]
+    public ActionResult Vendor() 
+    {
+      return View();
+    }
   }
 }
