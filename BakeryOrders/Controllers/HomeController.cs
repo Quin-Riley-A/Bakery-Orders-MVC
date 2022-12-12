@@ -12,7 +12,7 @@ namespace BakeryOrder.Controllers
       return View();
     }
 
-    [Route("/Vendors")]
+    [Route("/vendors")]
     public ActionResult Vendor() 
     {
       return View();

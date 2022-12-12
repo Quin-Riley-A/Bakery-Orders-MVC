@@ -30,5 +30,9 @@ namespace Bakery.Tests
       Order newOrder = new Order("order1Title", "order1Description", "3", "3", "September 3, 1821");
       Assert.AreEqual(15, newOrder.Price);
     }
+    public void MOrderClassConstructor_CalculatePrice_Int()
+    {
+
+    }
   }
 }
