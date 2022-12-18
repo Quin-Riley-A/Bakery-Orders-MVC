@@ -10,8 +10,20 @@
     <meta charset='utf-8'>
   </head>
   <body>
-    <h1>wow look nothing!</h1>
+    @using Bakery.Models;
+    <h1>List of Vendors</h1>
+    @if (@Model.Count == 0)
+    {
+    <h3>wow look nothing!</h3>
     <p>This page will display all vendors. (When you've added some).</p>
-    <a href="/vendor/new">Add a new vendor</a>
+    }
+    <a href="/vendors/new">Add a new vendor</a>
+    @foreach (Vendor vendor in Model)
+    {
+      <h3><a href="/vendors/@vendor.VendorId">@vendor.VendorName</a></h3>
+      <ul>
+        <li>@vendor.VendorDescription</li>
+      </ul>
+    }
   </body>
 </html>
