@@ -49,11 +49,21 @@ namespace Bakery.Tests
     public void GetAll_ReturnsFullVendorList_VendorsList()
     {
       Vendor newVendor1 = new Vendor("Bill's Bagels", "Bill sells bagels and various sundries");
-      Vendor newVendor2 = new Vendor("Bob's Beagles", "Bob sells owns an animal rescue league and made a mistake...");
+      Vendor newVendor2 = new Vendor("Bob's Beagles", "Bob  owns an animal rescue league and made a mistake...");
       List<Vendor> newList = new List<Vendor> {newVendor1, newVendor2};
       List<Vendor> getAllResults = Vendor.GetAll();
-      Console.WriteLine(getAllResults);
       CollectionAssert.AreEqual(newList, getAllResults);
+    }
+
+    [TestMethod]
+    public void FindVendor_ReturnsVendorFromSpecifiedId_Vendor()
+    {
+      Vendor newVendor1 = new Vendor("Bill's Bagels", "Bill sells bagels and various sundries");
+      Vendor newVendor2 = new Vendor("Bob's Beagles", "Bob  owns an animal rescue league and made a mistake...");
+      Vendor foundVendor = Vendor.FindVendor(0);
+      Console.WriteLine(newVendor1.VendorName);
+      Console.WriteLine(foundVendor.VendorName);
+      Assert.AreEqual(newVendor1, foundVendor);
     }
   }
 }

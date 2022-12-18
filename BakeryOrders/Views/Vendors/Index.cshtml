@@ -21,9 +21,10 @@
     @foreach (Vendor vendor in Model)
     {
       <h3><a href="/vendors/@vendor.VendorId">@vendor.VendorName</a></h3>
-      <ul>
+      @* I could not get this description line to appear and have trouble understanding why my line 23 began working.*@
+      @* <ul>
         <li>@vendor.VendorDescription</li>
-      </ul>
+      </ul> *@
     }
   </body>
 </html>

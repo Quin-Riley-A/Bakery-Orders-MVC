@@ -18,7 +18,6 @@ namespace Bakery.Models
       _instances.Add(this);
       VendorId = _instances.Count;
       OrderList = new List<Order>{};
-      Console.WriteLine(VendorDescription);
     }
 
     public static List<Vendor> GetAll()
@@ -29,6 +28,11 @@ namespace Bakery.Models
     public static void ClearAll()
     {
       _instances.Clear();
+    }
+
+    public static Vendor FindVendor(int targetId)
+    {
+      return _instances[targetId];
     }
   }
 }
