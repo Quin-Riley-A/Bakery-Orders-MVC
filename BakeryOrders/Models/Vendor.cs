@@ -8,7 +8,7 @@ namespace Bakery.Models
     public string VendorName {get; set;}
     public string VendorDescription {get; set;}
     public List<Order> OrderList {get; set; }
-    public int VendorId {get; set;}
+    public int VendorId {get; }
     private static List<Vendor> _instances = new List<Vendor> {};
 
     public Vendor(string name, string description)
@@ -30,9 +30,9 @@ namespace Bakery.Models
       _instances.Clear();
     }
 
-    public static Vendor FindVendor(int targetId)
+    public static Vendor FindVendor(int vendorId)
     {
-      return _instances[targetId];
+      return _instances[vendorId-1];
     }
   }
 }
