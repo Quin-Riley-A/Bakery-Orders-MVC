@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using System;
 
 namespace Bakery.Models
 {
   public class Vendor
   {
-    public string VendorName {get; set; }
-    public string VendorDescription {get; set; }
+    public string VendorName {get; set;}
+    public string VendorDescription {get; set;}
     public List<Order> OrderList {get; set; }
     public int VendorId {get; set;}
     private static List<Vendor> _instances = new List<Vendor> {};
@@ -16,6 +17,8 @@ namespace Bakery.Models
       VendorDescription = description;
       _instances.Add(this);
       VendorId = _instances.Count;
+      OrderList = new List<Order>{};
+      Console.WriteLine(VendorDescription);
     }
 
     public static List<Vendor> GetAll()
