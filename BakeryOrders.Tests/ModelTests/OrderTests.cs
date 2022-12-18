@@ -6,8 +6,14 @@ using Bakery.Models;
 namespace Bakery.Tests
 {
   [TestClass]
+
   public class OrderTests
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
+    
     [TestMethod]
     public void OrderClassConstructor_InstantiatesOneOrderObj_Order()
     {
@@ -31,12 +37,22 @@ namespace Bakery.Tests
       Assert.AreEqual(15, newOrder.Price);
     }
     [TestMethod]
+    public void ClearAll_ClearsStaticListofOrdersInstances_Void()
+    {
+      Order newOrder = new Order("order1Title", "order1Description", "3", "3", "September 3, 1821");
+      Order.ClearAll();
+      List<Order> getAllResults = Order.GetAll();
+      List<Order> newTestList = new List<Order> {};
+      CollectionAssert.AreEqual(newTestList, getAllResults);
+    }
+    [TestMethod]
     public void GetAll_ReturnsAllOrdersInInstanceList_OrdersList()
     {
       Order newOrder1 = new Order("order1Title", "order1Description", "3", "3", "September 3, 1821");
       Order newOrder2 = new Order("order2Title", "order2Description", "3", "3", "September 3, 1822");
       List<Order> newList = new List<Order> {newOrder1, newOrder2 };
       List<Order> getAllResults = Order.GetAll();
+      Console.WriteLine(getAllResults);
       CollectionAssert.AreEqual(newList, getAllResults);
     }
 
