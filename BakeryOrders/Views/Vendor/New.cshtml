@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add Vendor</title>
+    <link 
+      rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+      crossorigin="anonymous">
+  </head>
+  <body>
+    <h2>Vendor Input Page</h2>
+    <p>Please input a new vendor</p>
+    <form action="/vendors" method="post">
+      <label for="vendName">Name of vendor</label>
+      <input id="vendName" name="vendName" type="text">
+      <label for="description">Vendor description</label>
+      <input id="description" name="description" type="text">
+      <button type="submit">Add vendor</button>
+    </form>
+
+    <p><a href="/">Return to front page</a></p>
+    <p><a href="/vendors">Return to vendors page</a></p>
+  </body>
+</html>
