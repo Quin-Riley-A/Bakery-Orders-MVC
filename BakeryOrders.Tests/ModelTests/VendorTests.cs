@@ -14,11 +14,29 @@ namespace Bakery.Tests
       Vendor newVendor = new Vendor("Bill's Bagels", "Bill sells bagels and various sundries");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
+
+    [TestMethod]
     public void VendorClassConstructor_ObjectValuesMatchArguments_Vendor()
     {
       Vendor newVendor = new Vendor("Bill's Bagels", "Bill sells bagels and various sundries");
       Assert.AreEqual("Bill's Bagels", newVendor.VendorName);
       Assert.AreEqual("Bill sells bagels and various sundries", newVendor.VendorDescription);
     }
+    [TestMethod]
+    public void GetAll_ReturnsListOfAllVendors_VendorsList()
+    {
+      Vendor newVendor = new Vendor("Bill's Bagels", "Bill sells bagels and various sundries");
+      Assert.AreEqual(typeof(List<Vendor>), Vendor.GetAll().GetType());
+    }
+
+    // [TestMethod]
+    // public void ClearAll_ClearsVendorsInstanceList_Void()
+    // {
+    //   Vendor newVendor = new Vendor("Bill's Bagels", "Bill sells bagels and various sundries");
+    //   Vendor.ClearAll();
+    //   List<Vendor> getAllResults = Vendor.GetAll();
+    //   List<Vendor> newTestList = new List<Vendor> {};
+    //   CollectionAssert.AreEqual(newTestList, getAllResults);
+    // }
   }
 }
