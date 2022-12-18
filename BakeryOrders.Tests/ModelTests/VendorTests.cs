@@ -6,8 +6,14 @@ using Bakery.Models;
 namespace Bakery.Tests
 {
   [TestClass]
+
   public class VendorTests
   {
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
+
     [TestMethod]
     public void VendorClassConstructor_InstantiatesOneVendorObj_Vendor()
     {
@@ -37,6 +43,17 @@ namespace Bakery.Tests
       List<Vendor> getAllResults = Vendor.GetAll();
       List<Vendor> newTestList = new List<Vendor> {};
       CollectionAssert.AreEqual(newTestList, getAllResults);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsFullVendorList_VendorsList()
+    {
+      Vendor newVendor1 = new Vendor("Bill's Bagels", "Bill sells bagels and various sundries");
+      Vendor newVendor2 = new Vendor("Bob's Beagles", "Bob sells owns an animal rescue league and made a mistake...");
+      List<Vendor> newList = new List<Vendor> {newVendor1, newVendor2};
+      List<Vendor> getAllResults = Vendor.GetAll();
+      Console.WriteLine(getAllResults);
+      CollectionAssert.AreEqual(newList, getAllResults);
     }
   }
 }
