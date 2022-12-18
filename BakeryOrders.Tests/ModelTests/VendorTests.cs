@@ -58,12 +58,15 @@ namespace Bakery.Tests
     [TestMethod]
     public void FindVendor_ReturnsVendorFromSpecifiedId_Vendor()
     {
-      Vendor newVendor1 = new Vendor("Bill's Bagels", "Bill sells bagels and various sundries");
-      Vendor newVendor2 = new Vendor("Bob's Beagles", "Bob  owns an animal rescue league and made a mistake...");
-      Vendor foundVendor = Vendor.FindVendor(0);
-      Console.WriteLine(newVendor1.VendorName);
-      Console.WriteLine(foundVendor.VendorName);
-      Assert.AreEqual(newVendor1, foundVendor);
+      string vendorName1 = "Bill's Bagels";
+      string vendorName2 = "Bob's Beagles";
+      string vendorDescription1 = "Bill sells bagels and various sundries";
+      string vendorDescription2 = "Bob  owns an animal rescue league and made a mistake...";
+
+      Vendor newVendor1 = new Vendor(vendorName1, vendorDescription1);
+      Vendor newVendor2 = new Vendor(vendorName2, vendorDescription2);
+      Vendor foundVendor = Vendor.FindVendor(2);
+      Assert.AreEqual(newVendor2, foundVendor);
     }
   }
 }
