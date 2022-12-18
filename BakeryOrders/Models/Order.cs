@@ -31,6 +31,10 @@ namespace Bakery.Models
       int pastryPrice = ((currentObj.PastryCount/3) * 5) + (currentObj.PastryCount%3)*2;
       currentObj.Price = breadPrice + pastryPrice;
     }
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
     public static List<Order> GetAll()
     {
       return _instances;
