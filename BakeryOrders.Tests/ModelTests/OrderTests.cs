@@ -30,9 +30,15 @@ namespace Bakery.Tests
       Order newOrder = new Order("order1Title", "order1Description", "3", "3", "September 3, 1821");
       Assert.AreEqual(15, newOrder.Price);
     }
-    public void MOrderClassConstructor_CalculatePrice_Int()
+    [TestMethod]
+    public void GetAll_ReturnsAllOrdersInInstanceList_OrdersList()
     {
-
+      Order newOrder1 = new Order("order1Title", "order1Description", "3", "3", "September 3, 1821");
+      Order newOrder2 = new Order("order2Title", "order2Description", "3", "3", "September 3, 1822");
+      List<Order> newList = new List<Order> {newOrder1, newOrder2 };
+      List<Order> getAllResults = Order.GetAll();
+      CollectionAssert.AreEqual(newList, getAllResults);
     }
+
   }
 }
