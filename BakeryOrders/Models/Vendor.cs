@@ -25,7 +25,7 @@ namespace Bakery.Models
 
     public static void ClearAll()
     {
-    //   _instances.Clear();
+      _instances.Clear();
     }
   }
 }
