@@ -10,6 +10,7 @@ namespace Bakery.Models
     public int PastryCount {get; set; }
     public string Date {get; set; }
     public int Price {get; set; }
+    public int OrderId {get; set; }
     private static List<Order> _instances = new List<Order> {};
 
     public Order(string title, string description, string breadCount, string pastryCount, string date)
@@ -20,6 +21,8 @@ namespace Bakery.Models
       PastryCount = int.Parse(pastryCount);
       Date = date;
       Order.OrderPrice(this);
+      _instances.Add(this);
+      OrderId = _instances.Count;
     }
 
     public static void OrderPrice(Order currentObj)
@@ -27,6 +30,10 @@ namespace Bakery.Models
       int breadPrice = ((currentObj.BreadCount/3) * 10) + (currentObj.BreadCount%3)*5;
       int pastryPrice = ((currentObj.PastryCount/3) * 5) + (currentObj.PastryCount%3)*2;
       currentObj.Price = breadPrice + pastryPrice;
+    }
+    public static List<Order> GetAll()
+    {
+      return _instances;
     }
   }
 }
