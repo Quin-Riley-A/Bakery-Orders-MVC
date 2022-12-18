@@ -29,14 +29,14 @@ namespace Bakery.Tests
       Assert.AreEqual(typeof(List<Vendor>), Vendor.GetAll().GetType());
     }
 
-    // [TestMethod]
-    // public void ClearAll_ClearsVendorsInstanceList_Void()
-    // {
-    //   Vendor newVendor = new Vendor("Bill's Bagels", "Bill sells bagels and various sundries");
-    //   Vendor.ClearAll();
-    //   List<Vendor> getAllResults = Vendor.GetAll();
-    //   List<Vendor> newTestList = new List<Vendor> {};
-    //   CollectionAssert.AreEqual(newTestList, getAllResults);
-    // }
+    [TestMethod]
+    public void ClearAll_ClearsVendorsInstanceList_Void()
+    {
+      Vendor newVendor = new Vendor("Bill's Bagels", "Bill sells bagels and various sundries");
+      Vendor.ClearAll();
+      List<Vendor> getAllResults = Vendor.GetAll();
+      List<Vendor> newTestList = new List<Vendor> {};
+      CollectionAssert.AreEqual(newTestList, getAllResults);
+    }
   }
 }
