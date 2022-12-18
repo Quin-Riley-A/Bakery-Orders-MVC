@@ -6,14 +6,8 @@ namespace BakeryOrder.Controllers
   public class HomeController : Controller
   {
 
-    [Route("/")]
+    [HttpGet("/")]
     public ActionResult Index() 
-    {
-      return View();
-    }
-
-    [Route("/vendors")]
-    public ActionResult Vendor() 
     {
       return View();
     }

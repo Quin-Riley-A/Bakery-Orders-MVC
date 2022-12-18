@@ -5,8 +5,10 @@ namespace BakeryOrder.Controllers
 {
   public class VendorController : Controller
   {
+    [HttpGet("/vendors")]
 
-    [Route("/vendor/new")]
+
+    [HttpGet("/vendors/new")]
     public ActionResult CreateForm()
     {
       return View();
